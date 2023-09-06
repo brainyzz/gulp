@@ -9,9 +9,7 @@ html {
 }
 
 .page {
-  height: 100%;
-  font-family: var(--font-family, sans-serif);
-  -webkit-text-size-adjust: 100%;
+
 }
 
 .page__body {
@@ -19,6 +17,14 @@ html {
   min-width: 320px;
   min-height: 100%;
   font-size: 16px;
+  height: 100%;
+  font-family: var(--font-text, sans-serif);
+  -webkit-text-size-adjust: 100%;
+  background-color: var(--bg-color);
+  color: var(--text);
+}
+h1 {
+  font-family: var(--font-family, sans-serif);
 }
 
 img {

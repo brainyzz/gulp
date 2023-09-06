@@ -1,0 +1,629 @@
+.main {
+  margin-top: 100px;
+  @include small-tablet {
+    margin-top: 60px;
+  }
+  @include mobile {
+    margin-top: 20px;
+  }
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    height: 440px;
+    @include tablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+    &__title {
+      font-size: 58px;
+      line-height: 120%;
+      font-weight: 800;
+      transition-duration: .8s;
+      @include tablet {
+        grid-area: 1 / 2 / 2 / 3;
+      }
+      @include mobile {
+        font-size: 34px;
+        text-align: center;
+      }
+      .title__rep {
+        font-weight: 400;
+        //display: block;
+        //font-size: 40px;
+        margin-left: -80px;
+        font-family: var(--font-text);
+        line-height: 120%;
+        @include tablet {
+          display: block;
+        }
+        @include mobile {
+          margin-left: 0;
+          display: inline;
+        }
+      }
+      .title__main {
+        font-weight: 300;
+        display: block;
+        margin-left: 50px;
+        position: relative;
+        &:before {
+          content: '';
+          width: 250px;
+          height: 3px;
+          border-bottom: 1px dashed;
+          position: absolute;
+          bottom: 0;
+          right: -75px;
+          border-bottom-color: var(--text);
+          @include tablet {
+            border-bottom: 0;
+          }
+        }
+        @include mobile {
+          margin-left: 0;
+        }
+      }
+    }
+    &__img {
+      z-index: 2;
+      margin-top: 70px;
+      transition: .8s;
+      @include tablet {
+        grid-area: 1 / 1 / 3 / 2;
+      }
+      @include mobile {
+        margin: 0 auto;
+      }
+      & > * {
+        border-radius: 50%;
+      }
+    }
+    &__text {
+      transition-duration: .8s;
+      flex: 0 0 500px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      @include tablet {
+        grid-area: 2 / 2 / 3 / 3;
+        margin-left: -80px;
+      }
+      @include small-tablet {
+        margin-left: -60px;
+      }
+      @include mobile {
+        margin-left: 0;
+        flex: 0 0 200px;
+      }
+      .text__info {
+        position: relative;
+        line-height: 150%;
+        font-size: 20px;
+        font-weight: 500;
+        @include tablet {
+          font-size: 16px;
+
+        }
+        &:before {
+          content: '';
+          width: calc(100% + 40px);
+          height: 3px;
+          border-bottom: 1px dashed;
+          position: absolute;
+          top: -5px;
+          left: -50px;
+          border-bottom-color: var(--text);
+          @include tablet {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+    &__link {
+      margin-top: 34px;
+    }
+  }
+  .about {
+    margin-top: 100px;
+    display: flex;
+    display: none;
+    &__text {
+ //     background: #ffbb5454;
+      padding: 50px 30px 50px 100px;
+      position: relative;
+      color: var(--text);
+      font-size: 20px;
+      border-radius: 10px;
+      transition: .4s;
+      &:hover {
+        border-radius: 50px;
+      }
+    }
+    &__texte p {
+      font-size: 24px;
+      margin-top: 30px;
+    }
+    &__text:before {
+      content: "";
+      width: 6px;
+      background: var(--inter-second);
+      position: absolute;
+      left: 70px;
+      top: 20px;
+      bottom: 20px;
+    }
+    &__text:after {
+      content: "\201C";
+      font-family: serif;
+      position: absolute;
+      top: 20px;
+      left: 16px;
+      color: var(--inter-second);;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 40px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 50px;
+    }
+    //&__text p:before {
+    //  content: "\201C";
+    //  font-size: 100px;
+    //  color: var(--inter-second);
+    //  font-family: serif;
+    //  position: absolute;
+    //  top: 0;
+    //  left: 50%;
+    //  transform: translateX(-50%);
+    //}
+   }
+  .reviews {
+    margin-top: 100px;
+    margin-bottom: 70px;
+    position: relative;
+    @include small-tablet {
+      margin-top: 60px;
+    }
+    &__title {
+      text-align: center;
+      font-size: 40px;
+      text-transform: uppercase;
+      @include tablet {
+        font-size: 36px;
+      }
+      @include mobile {
+        font-size: 28px;
+      }
+    }
+    &__slider {
+      overflow: hidden;
+      .slider__item {
+        .container {
+          display: flex;
+          justify-content: space-between;
+          height: 640px;
+          @include tablet {
+            padding-left: 50px;
+          }
+          @include small-tablet {
+            height: 505px;
+          }
+          @include mobile {
+            display: block;
+            padding-left:20px;
+            padding-right: 20px;
+            height: auto;
+          }
+        }
+        .item {
+          &__img {
+            flex: 0 0 300px;
+            border-radius: 10px;
+            @include mobile {
+              display: none;
+            }
+          }
+          &__info {
+            flex: 0 0 70%;
+            margin-left: 70px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            @include mobile {
+              margin-left: 0;
+            }
+          }
+          &__title {
+            font-weight: 800;
+            font-size: 40px;
+            width: 600px;
+            margin: 0 auto;
+            @include tablet {
+              width: 70%;
+              margin-left: 0;
+              margin-right: 0;
+            }
+            @include small-tablet {
+              font-size: 28px;
+              width: 100%;
+            }
+            @include mobile {
+              font-size: 24px;
+
+            }
+            span {
+              font-family: var(--font-text);
+              font-weight: 500;
+              display: flex;
+              align-items: flex-end;
+              span {
+                margin-left: 9px;
+                font-size: 22px;
+                margin-bottom: 5px;
+                @include small-tablet {
+                  font-size: 16px;
+                }
+                @include mobile {
+                  margin-bottom: 2px;
+                }
+              }
+            }
+          }
+          &__text {
+            margin: 40px auto 0 auto;
+            width: 600px;
+            font-size: 24px;
+            line-height: 120%;
+            @include tablet {
+              width: 50%;
+              margin-left: 0;
+              margin-right: 0;
+              font-size: 20px;
+            }
+            @include small-tablet {
+              width: 70%;
+            }
+            @include mobile {
+              width: 100%;
+              margin-top: 12px;
+              font-size: 16px;
+            }
+            .text__full {
+              display: none;
+              @include mobile {
+                display: block;
+                margin-top: 10px;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                font-weight: 700;
+                letter-spacing: .25px;
+                border: 1px var(--text);
+                border-bottom-style: dashed;
+              }
+            }
+          }
+        }
+      }
+      .container--btn {
+        position: relative;
+        max-width: calc(var(--container-width) + 400px);
+        margin: 0 auto;
+        @include mobile {
+          margin-top: 50px;
+        }
+        .swiper-pagination {
+          display: none;
+          @include mobile {
+            display: block;
+          }
+        }
+        .swiper-pagination-bullet-active {
+          @include mobile {
+            background: var(--inter-color);
+          }
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+          color: var(--text);
+          font-weight: 700;
+          top: -360px;
+          @include small-tablet {
+            top: -250px;
+          }
+          @include mobile {
+            display: none;
+          }
+        }
+      }
+
+    }
+  }
+  .services {
+    margin-top: 160px;
+    @include small-tablet {
+      margin-top: 100px;
+    }
+    @include mobile {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    &__title {
+      text-align: center;
+      font-size: 40px;
+      text-transform: uppercase;
+      margin-bottom: 120px;
+      @include tablet {
+        font-size: 36px;
+      }
+      @include mobile {
+        font-size: 28px;
+      }
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px;
+      @include small-tablet {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 80px;
+        justify-content: center;
+
+      }
+    }
+    &__item {
+      background-color: #FFFBF8;
+      border-radius: 10px;
+      position: relative;
+      padding: 50px 20px 30px 20px;
+      font-size: 20px;
+      @include small-tablet {
+        flex: 0 0 40%;
+      }
+      @include mobile {
+        flex: 0 0 100%;
+      }
+      &:before {
+        content: '';
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background-color: var(--bg-color);
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        margin: -60px auto 0 auto;
+      }
+      .item__img {
+        position: absolute;
+        top: -50px;
+        left: 0;
+        right: 0;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+      }
+      .item__title {
+        text-align: center;
+        height: 54px;
+        @include small-tablet {
+          font-size: 20px;
+        }
+        @include mobile {
+          height: auto;
+        }
+      }
+       .item__price {
+         .price__ab, .price__one {
+           margin-top: 20px;
+           text-align: center;
+           @include small-tablet {
+             font-size: 16px;
+           }
+           b {
+             margin-bottom: 7px;
+             display: block;
+           }
+         }
+       }
+      .item__link {
+        margin: 35px auto 0 auto;
+        font-family: var(--text);
+      }
+    }
+  }
+  .abouts {
+    margin-top: 100px;
+    font-size: 20px;
+    @include small-tablet {
+      margin-top: 60px;
+    }
+    &__title {
+      text-align: center;
+      font-size: 40px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      @include tablet {
+        font-size: 34px;
+      }
+      @include mobile {
+        font-size: 28px;
+      }
+    }
+    .container {
+
+    }
+    &__text {
+      display: grid;
+      grid-template-columns: repeat(2, 450px);
+      justify-content: space-between;
+      @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        font-size: 16px;
+      }
+      @include mobile {
+        display: block;
+        padding: 0;
+        margin: 0;
+      }
+    }
+    .text__title, .column__title {
+      position: relative;
+      display: flex;
+      align-items: center;
+      &:before {
+        content: '';
+        width: 20px;
+        margin-right: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: var(--inter-second);
+      }
+    }
+    .text__title:before {
+      background-color: var(--inter-color);
+    }
+    .more__list {
+      .list__item {
+        margin-top: 20px;
+        margin-left: 20px;
+        list-style: disc;
+        &::marker {
+          color: var(--inter-second)
+        }
+      }
+    }
+  }
+  .how {
+    margin-bottom: 60px;
+    margin-top: 160px;
+    font-size: 20px;
+    @include small-tablet {
+      font-size: 16px;
+      margin-top: 100px;
+    }
+    @include mobile {
+      margin-top: 0;
+    }
+    &__title {
+      font-size: 40px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      @include tablet {
+        font-size: 34px;
+      }
+      @include mobile {
+        font-size: 28px;
+      }
+    }
+    &__miro, .edvibe, .quizlet, .wordwall {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      margin-bottom: 60px;
+      @include tablet {
+        gap: 50px;
+      }
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+      }
+      &__video, .miro__video {
+        width: 500px;
+        margin-left: auto;
+        @include small-tablet {
+          width: 350px;
+        }
+        @include mobile {
+          width: 100%;
+        }
+      }
+    }
+    .edvibe,.wordwall {
+      @include mobile {
+        flex-direction: column-reverse;
+      }
+      &__video {
+        margin-right: auto;
+        margin-left: 0;
+      }
+    }
+  }
+
+}
+
+.btn {
+  display: block;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 150%;
+  color: var(--red-color);
+  width: fit-content;
+  background-color: var(--inter-second);
+  padding: 12px 38px;
+  border-radius: 10px;
+  transition: .4s;
+  &:hover {
+    border-radius: 50px;
+  }
+  @include mobile {
+    margin: 30px auto 0 auto;
+    padding: 8px 30px;
+    font-size: 18px;
+  }
+}
+
+
+.popup__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  opacity: 0; // Скрываем фон и сам попап
+  pointer-events: none; // Запрещаем ему быть целью событий
+  transition: 0.5s all;
+  display: flex;
+  align-items: center;
+}
+
+.popup__bg.active { // При добавлении класса 'active'
+  opacity: 1; // Показываем фон и попап
+  pointer-events: all; // Возвращаем события
+  transition: 0.5s all;
+}
+
+.popup.active { // При добавлении класса 'active'
+  transform: translate(-50%, -50%) scale(1); // Так же центрируем и плавно увеличиваем
+  transition: 0.5s all;
+}
+/* Конец важной части */
+/* Далее код для стилизации формы */
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+
+
+//[data-aos][data-aos][data-aos-duration="400"], body[data-aos-duration="400"] [data-aos] {
+//  transition-duration: .8s!important;
+//  transition-delay: .1s;
+//}

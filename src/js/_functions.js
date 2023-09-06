@@ -50,15 +50,37 @@ console.log(mobileCheck())
 // });
 
 // Подключение свайпера
-// import Swiper, { Navigation, Pagination } from 'swiper';
-// Swiper.use([Navigation, Pagination]);
-// const swiper = new Swiper(el, {
-//   slidesPerView: 'auto',
-// });
+import Swiper, { Navigation, Pagination } from 'swiper';
+Swiper.use([Navigation, Pagination]);
+const swiper = new Swiper('.reviews__slider', {
+  slidesPerView: 1,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+  },
+});
+
+const btnRev = document.querySelectorAll('.text__full')
+const popup = document.querySelector('.popup__bg')
+const closePopupButton = document.querySelector('.close-popup');
+btnRev.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    popup.classList.add('active')
+    let numImg = Number(index) + 1
+    document.querySelector('.popup__img').src = 'img/rev/' + numImg + '.webp'
+  })
+})
+closePopupButton.addEventListener('click', () => {
+  popup.classList.remove('active')
+})
 
 // Подключение анимаций по скроллу
-// import AOS from 'aos';
-// AOS.init();
+import AOS from 'aos';
+AOS.init();
 
 // Подключение параллакса блоков при скролле
 // import Rellax from 'rellax';

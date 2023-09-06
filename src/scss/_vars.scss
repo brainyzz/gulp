@@ -2,11 +2,18 @@
 // colors
 :root {
   // base
-  --font-family: "Open Sans", sans-serif;
-  --content-width: 1170px;
+  --font-family: 'Plus Jakarta Sans', sans-serif;
+  --font-text: 'PT Sans', sans-serif;
+  --content-width: 1270px;
   --container-offset: 15px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
   // colors
   --light-color: #fff;
+  --bg-color: #FFF7F3;
+  --inter-second: #ffbb54;
+  --inter-color: #ff2f20;
+  --red-color: #ff2f20;
+  --menu-text: #332e2e;
+  --text: #1a1b1f;
 }
